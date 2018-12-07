@@ -1,22 +1,46 @@
 {
-  "name": "test-nasa-foto",
-  "version": "1.0.0",
-  "description": "Test task",
-  "main": "index.js",
+  "name": "test-task-nasa",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kolymb-Kapustin/test-nasa-foto.git"
-  },
-  "author": "Nick",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kolymb-Kapustin/test-nasa-foto/issues"
-  },
-  "homepage": "https://github.com/Kolymb-Kapustin/test-nasa-foto#readme",
   "dependencies": {
     "vue": "^2.5.17"
-  }
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.5",
+    "@vue/cli-plugin-eslint": "^3.0.5",
+    "@vue/cli-service": "^3.0.5",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
