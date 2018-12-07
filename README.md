@@ -1,4 +1,4 @@
-# test-task-nasa
+# Test-task-nasa
 
 ## Project setup
 ```
