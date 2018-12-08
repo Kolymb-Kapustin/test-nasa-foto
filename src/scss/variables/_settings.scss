@@ -1,0 +1,17 @@
+$body-font-family: Arial, Helvetica, sans-serif !default;
+
+$row-width: rem-calc(1620) !default;
+$column-gutter: rem-calc(30) !default;
+$total-columns: 24 !default;
+
+$block-grid-elements: 10 !default;
+$block-grid-default-spacing: 30px !default;
+
+$lineHeight: rem(16) !default;
+
+// $spaceBetweenBlocks: rem(20) !default;
+
+// $inputHeight: rem(35) !default;
+
+$imgPathComponent: 'img/';  // шлях до зображень із html-компонентів
+$imgPathSCSS: '../img/';	 // шлях до зображень із vue-компонентів та scss файлів

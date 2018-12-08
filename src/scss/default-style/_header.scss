@@ -1,0 +1,40 @@
+h1, .h1 {
+	font-size: rem(25);
+	text-transform: uppercase;
+	color: #475459;
+	font-weight: normal;
+	margin: 0 0 22px;
+
+}
+
+h2, .h2 {
+	margin: 0 0 10px;
+	font-size: rem(27);
+	color: #ff9600;
+	font-weight: normal;
+	line-height: rem(25);
+}
+
+h3, .h3 {
+	margin: 0 0 10px;
+	color: #ff9600;
+	font-size: rem(18);
+	font-weight: normal;
+	text-transform: uppercase;
+
+}
+
+h4, .h4 {
+	margin: 0 0 10px;
+	color: #ff9600;
+	font-size: rem(15);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+h5, .h5 {
+	margin: 0 0 10px;
+	color: #ff9600;
+	font-size: rem(15);
+	font-weight: bold;
+}

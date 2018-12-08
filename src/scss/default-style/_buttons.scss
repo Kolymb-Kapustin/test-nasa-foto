@@ -1,0 +1,26 @@
+.yam-button, [type="submit"], [type="button"], [data-submitter]  {
+   display: block;
+   height: 45px;
+   background-color: #fff;
+   color: #f39200;
+   font-weight: bold;
+   text-transform: uppercase;
+   text-align: center;
+   text-decoration: none;
+   line-height: 45px;
+   @include single-transition();
+   cursor: pointer;
+   margin: 0 auto 20px;
+   max-width: 394px;
+   &:hover {
+      background-color: #f39200;
+      box-shadow: 0 0 5px #fff;
+      color:#fff;
+      @include single-transition();
+   }
+
+   &.style-1 {
+
+   }
+
+}

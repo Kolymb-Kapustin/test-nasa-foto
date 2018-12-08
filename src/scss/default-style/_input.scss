@@ -1,0 +1,35 @@
+input {
+	&[type="text"],
+	&[type="password"],
+	&[type="number"],
+	&[type="date"],
+	&[type="color"],
+	&[type="range"],
+	&[type="month"],
+	&[type="week"],
+	&[type="time"],
+	&[type="datetime"],
+	&[type="datetime-local"],
+	&[type="email"],
+	&[type="search"],
+	&[type="tel"] {
+		display: block;
+		width: 100%;
+		border: 1px solid #b1b1b1;
+		color: #282828;
+		&::placeholder{
+			color: #808080;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		&:hover {
+			@include single-transition();
+		}
+
+		&:focus {
+			@include single-transition();
+		}
+	}
+}

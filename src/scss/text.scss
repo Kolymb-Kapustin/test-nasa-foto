@@ -1,0 +1,44 @@
+@mixin single-transition($property:all, $speed:300ms, $ease:ease) {
+	-webkit-transition: $property $speed $ease;
+	-moz-transition: $property $speed $ease;
+	-ms-transition: $property $speed $ease;
+	-o-transition: $property $speed $ease;
+	transition: $property $speed $ease;
+}
+
+$inputHeight: 50px;
+
+
+@import "default-style/header";
+
+@import "default-style/buttons";
+
+@import "default-style/checkbox";
+
+@import "default-style/input";
+
+@import "default-style/textarea";
+
+@import "default-style/links";
+
+@import "default-style/text";
+
+body{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  ul{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+		li{
+		  -webkit-appearance: none;
+		  -moz-appearance: none;
+
+		  list-style-type: none;
+		}
+  }
+
+	.tableWrapper{
+		max-width: 100%;
+		overflow-x: auto;
+  }
+}
