@@ -1,13 +1,13 @@
 <template>
 	<div id="component-list">
 		<div
-				class="list-item"
-				:key="`${key}_container`"
-				v-for="(item,key) in nasaResponseUpgrade"
-			>
+			class="list-item"
+			:key="`${key}_container`"
+			v-for="(item,key) in nasaResponseUpgrade"
+		>
 			<div class="row center-h">
 				<template v-if="nasaResponseUpgrade.length > 0">
-					<div class="cols s_24 m_4">
+					<div class="cols s_24 m_6">
 						<div class="block-preview">
 							<div class="block-preview__image">
 								<img :src="item.img" :alt="item.title">
@@ -16,10 +16,10 @@
 						</div>
 					</div>
 
-					<div class="cols s_24 m_12">
+					<div class="cols s_24 m_16">
 						<div class="block-info">
-							<div class="block-info__title">{{item.title}}</div>
-							<div v-html="item.description" class="block-info__description">
+							<h2 class="block-info__title">{{item.title}}</h2>
+							<div v-if="item.title !== item.description" v-html="item.description" class="block-info__description">
 							</div>
 						</div>
 					</div>
@@ -59,14 +59,16 @@ export default {
 	},
 	methods: {
 		reloadResponse() {
+			this.nasaResponseUpgrade = [];
 
-			console.log(this.sortType);
-			console.log(this.nasaResponse);
-
+			this.nasaResponse.forEach(element => {
+				this.nasaResponseUpgrade.push(element);
+			});
+			
 			if(this.sortType !== '') {
-				this.nataResponseUpgrade = this.nasaResponse.sort((a,b) =>{
-					if (a[this.sortType] < b[this.sortType]) { return -1;}
-					if (a[this.sortType] > b[this.sortType]) { return 1;}
+				this.nasaResponseUpgrade = this.nasaResponseUpgrade.sort((a,b) =>{
+					if (a[this.sortType] < b[this.sortType]) {return  1 }
+					if (a[this.sortType] > b[this.sortType]) {return -1 }
 					return 0;
 				});
 			} else {
@@ -90,12 +92,14 @@ export default {
 			justify-content: center;
 			&__image {
 				img {
+					min-width: 100%;
 					border-radius: 5px;
 					margin-bottom: 10px;
 				}
 			}
 			&__date {
 				margin-bottom: 20px;
+				text-align: center;
 			}
 			@include m_up {
 				&__date {
@@ -107,9 +111,6 @@ export default {
 					}
 				}
 			}
-		}
-		.block-info {
-
 		}
 	}
 </style>

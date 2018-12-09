@@ -15,12 +15,14 @@ export default new Vuex.Store({
 				if(state.nasaResponse.items.length > 0) {
 					state.nasaResponse.items.forEach((element) => {
 						if(element.links){
-							if(element.links[0].render === 'image') {
+							if(element.links[0].render === 'image' &&
+								element.data[0].description.replace(/^\s+|\s+$/g, "") !== element.data[0].title.replace(/^\s+|\s+$/g, ""))
+							{
 								nataResponseUpgrade.push({
 									img: element.links[0].href,
-									description: element.data[0].description,
+									description: element.data[0].description.replace(/^\s+|\s+$/g, ""),
 									date_created: element.data[0].date_created,
-									title: element.data[0].title
+									title: element.data[0].title.replace(/^\s+|\s+$/g, "")
 								})
 							}
 						}

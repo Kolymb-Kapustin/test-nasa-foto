@@ -2,7 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 
-import './scss/grid.scss'			// сітка
+import sassStyles from './scss/grid.scss'
+
+sassStyles;
 
 Vue.config.productionTip = false
 
