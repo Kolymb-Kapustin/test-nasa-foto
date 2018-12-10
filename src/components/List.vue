@@ -12,7 +12,7 @@
 							<div class="block-preview__image">
 								<img :src="item.img" :alt="item.title">
 							</div>
-							<div class="block-preview__date">{{item.date_created}}</div>
+							<div class="block-preview__date">{{item.data_formated}}</div>
 						</div>
 					</div>
 
@@ -67,8 +67,8 @@ export default {
 			
 			if(this.sortType !== '') {
 				this.nasaResponseUpgrade = this.nasaResponseUpgrade.sort((a,b) =>{
-					if (a[this.sortType] < b[this.sortType]) {return  1 }
-					if (a[this.sortType] > b[this.sortType]) {return -1 }
+					if (a[this.sortType.name] < b[this.sortType.name]) { return this.sortType.type === 'down' ? -1 : 1}
+					if (a[this.sortType.name] > b[this.sortType.name]) { return this.sortType.type === 'down' ? 1 : -1}
 					return 0;
 				});
 			} else {

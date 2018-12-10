@@ -22,6 +22,7 @@ export default new Vuex.Store({
 									img: element.links[0].href,
 									description: element.data[0].description.replace(/^\s+|\s+$/g, ""),
 									date_created: element.data[0].date_created,
+									data_formated: window.moment(element.data[0].date_created).format('MMMM Do YYYY, h:mm:ss a'),
 									title: element.data[0].title.replace(/^\s+|\s+$/g, "")
 								})
 							}

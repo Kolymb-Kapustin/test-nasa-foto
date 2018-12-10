@@ -21,10 +21,19 @@
 							<span :class="sortType === '' ? 'active' : ''" @click="changeSort('')" class="sort-choose__text">default</span>
 						</div>
 						<div class="sort-choose__button">
-							<span :class="sortType === 'title' ? 'active' : ''" @click="changeSort('title')" class="sort-choose__text">sort by title</span>
+							<span 
+								:class="sortType.name === 'title' ? 'active' : ''" 
+								class="sort-choose__text"
+							>
+								Title
+							</span>
+							<span :class="sortType.name === 'title' && sortType.type === 'up' ? 'active' : ''" @click="changeSort({name:'title',type: 'up'})" class="sort-choose__text">⬆</span>
+							<span :class="sortType.name === 'title' && sortType.type === 'down' ? 'active' : ''" @click="changeSort({name:'title',type: 'down'})" class="sort-choose__text">⬇</span>
 						</div>
 						<div class="sort-choose__button">
-							<span :class="sortType === 'date_created' ? 'active' : ''" @click="changeSort('date_created')" class="sort-choose__text">sort by date</span>
+							<span :class="sortType.name === 'date_created' ? 'active' : ''" class="sort-choose__text">Date</span>
+							<span :class="sortType.name === 'date_created' && sortType.type === 'up' ? 'active' : ''" @click="changeSort({name:'date_created', type:'up'})" class="sort-choose__text">⬆</span>
+							<span :class="sortType.name === 'date_created' && sortType.type === 'down' ? 'active' : ''" @click="changeSort({name:'date_created', type:'down'})" class="sort-choose__text">⬇</span>
 						</div>
 					</div>
 				</div>
@@ -197,12 +206,17 @@ export default {
 			background: #fff;
 			&__button {
 				margin: 5px 0px;
-			}
-			&__text{
-				cursor: pointer;
-				user-select: none;
-				&.active {
-					color: #0070ff;
+				display: flex;
+				justify-content: flex-end;
+				span {
+					cursor: pointer;
+					user-select: none;
+					&.active {
+						color: #0070ff;
+					}
+					&:nth-child(1) {
+						margin-right: auto;
+					}
 				}
 			}
 			&.active {
