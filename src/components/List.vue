@@ -13,8 +13,6 @@
 								<img :src="item.img" :alt="item.title">
 							</div>
 							<div class="block-preview__date">{{item.date_formated}}</div>
-							<div class="block-preview__date">{{item.date_created}}</div>
-							<div class="block-preview__date">{{11111111}}</div>
 						</div>
 					</div>
 
