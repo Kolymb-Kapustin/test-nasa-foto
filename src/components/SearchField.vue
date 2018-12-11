@@ -32,8 +32,8 @@
 						</div>
 						<div class="sort-choose__button">
 							<span :class="sortType.name === 'date_created' ? 'active' : ''" class="sort-choose__text">Date</span>
-							<span :class="sortType.name === 'date_created' && sortType.type === 'up' ? 'active' : ''" @click="changeSort({name:'date_created', type:'up'})" class="sort-choose__text">⬆</span>
-							<span :class="sortType.name === 'date_created' && sortType.type === 'down' ? 'active' : ''" @click="changeSort({name:'date_created', type:'down'})" class="sort-choose__text">⬇</span>
+							<span :class="sortType.name === 'date_created' && sortType.type === 'down' ? 'active' : ''" @click="changeSort({name:'date_created', type:'down'})" class="sort-choose__text">⬆</span>
+							<span :class="sortType.name === 'date_created' && sortType.type === 'up' ? 'active' : ''" @click="changeSort({name:'date_created', type:'up'})" class="sort-choose__text">⬇</span>
 						</div>
 					</div>
 				</div>
