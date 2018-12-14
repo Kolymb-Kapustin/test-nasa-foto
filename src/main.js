@@ -5,8 +5,7 @@ import moment from 'moment';
 
 window.moment = moment;
 
-import sassStyles from './scss/grid.scss'
-sassStyles;
+import  './scss/grid.scss'
 
 Vue.config.productionTip = false
 

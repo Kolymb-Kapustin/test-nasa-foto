@@ -13,27 +13,24 @@
 			<div class="cols s__10 s___6 m_4 l_4 s__offset-14 s___offset-18 m_offset-0">
 				<div class="sort-container">
 					<div @click="sortToggle($event)" class="sort-button">
-							<span class="sort-button__text">sort</span>
+							<span class="sort-button__text">Sort by </span>
 							<svg :class="toggleSort ? 'active' : ''" class="sort-button__icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="284.929px" height="284.929px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;" xml:space="preserve"><g><path d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
 					</div>
 					<div :class="toggleSort ? 'active' : ''" class="sort-choose">
 						<div class="sort-choose__button">
-							<span :class="sortType === '' ? 'active' : ''" @click="changeSort('')" class="sort-choose__text">default</span>
+							<span @click="changeSort('')" class="sort-choose__text">Default</span>
 						</div>
 						<div class="sort-choose__button">
-							<span 
-								:class="sortType.name === 'title' ? 'active' : ''" 
-								class="sort-choose__text"
-							>
-								Title
-							</span>
-							<span :class="sortType.name === 'title' && sortType.type === 'up' ? 'active' : ''" @click="changeSort({name:'title',type: 'up'})" class="sort-choose__text">⬆</span>
-							<span :class="sortType.name === 'title' && sortType.type === 'down' ? 'active' : ''" @click="changeSort({name:'title',type: 'down'})" class="sort-choose__text">⬇</span>
+							<span @click="changeSort({name:'date_created', type:'up'})">Title: Low to High</span>
 						</div>
 						<div class="sort-choose__button">
-							<span :class="sortType.name === 'date_created' ? 'active' : ''" class="sort-choose__text">Date</span>
-							<span :class="sortType.name === 'date_created' && sortType.type === 'down' ? 'active' : ''" @click="changeSort({name:'date_created', type:'down'})" class="sort-choose__text">⬆</span>
-							<span :class="sortType.name === 'date_created' && sortType.type === 'up' ? 'active' : ''" @click="changeSort({name:'date_created', type:'up'})" class="sort-choose__text">⬇</span>
+							<span @click="changeSort({name:'date_created', type:'down'})">Title: High to Low</span>
+						</div>
+						<div class="sort-choose__button">
+							<span @click="changeSort({name:'date_created', type:'down'})" class="sort-choose__text">Date: Low to High</span>
+						</div>
+						<div class="sort-choose__button">
+							<span @click="changeSort({name:'date_created', type:'up'})" class="sort-choose__text">Date: High to Low</span>
 						</div>
 					</div>
 				</div>
@@ -191,7 +188,6 @@ export default {
 			}
 			&__text {
 				font-size: 12px;
-				text-transform: uppercase;
 				font-weight: bold;
 			}
 		}
@@ -204,6 +200,8 @@ export default {
 			border-radius: 5px;
 			display: none;
 			background: #fff;
+			font-size: 12px;
+			font-weight: bold;
 			&__button {
 				margin: 5px 0px;
 				display: flex;
